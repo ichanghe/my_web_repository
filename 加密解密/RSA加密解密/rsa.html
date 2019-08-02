@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RSA加密支持超长加密</title>
+</head>
+<meta charset="utf-8">
+<script type="text/javascript" src="./jsencrypt.js"></script>
+<body>
+<script type="text/javascript">
+	var encrypt = new JSEncrypt();
+	encrypt.setPublicKey("MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCoIlqXTJlqGiVm55tWhWPVd8mWhWRPSh7+4jcxM4kgmp+fZVxPMLfQSrDHw2bmpx3cBae4S1X5v8y8O1+15AkFJf7vXwim7HSPGNca4aJn4V7sKJbRYCHE4eITLW7NFleEzxYuH+WCHnluaHGk3vPjPu0067BrW4MdUjnCphqTiwIDAQAB");
+	//var data = '{"endTime":"2019-01-24 23:59:59","sign":1548323590000,"startTime":"2019-01-24 00:00:00","userCode":"17121309383693988","test":"中会受到发送到了"}';
+	var data = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1IjoiYWh5NUtVZ3BRZGM9IiwiaSI6IkVWY3ZnNHZqSkNZPSIsInQiOiJPc0JjTnErbmtBeGpiV0NuUDBNNnFnPT0iLCJiIjoiM3ljQnZ1UzBIZEE9IiwibiI6ImJEeFwvQkZOQmV1MD0ifQ.j0lnQWGltFfE7WotoK33Fm6HQwSl9Z5XplxaUpJFSJs';
+	var encryptData = encrypt.encryptLong2(data);  
+	console.log(encryptData);
+	
+	encrypt.setPrivateKey("MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBAKgiWpdMmWoaJWbnm1aFY9V3yZaFZE9KHv7iNzEziSCan59lXE8wt9BKsMfDZuanHdwFp7hLVfm/zLw7X7XkCQUl/u9fCKbsdI8Y1xrhomfhXuwoltFgIcTh4hMtbs0WV4TPFi4f5YIeeW5ocaTe8+M+7TTrsGtbgx1SOcKmGpOLAgMBAAECgYEApmpSZjzQAF/es0r8ypd+qBRHeG+RSJWhtkBrxowu5xGEer1Vr6AV39l9vkue9x9kA5mpV1VhxLBd0dWmtx78+PpxANhnNihm6AtIbb/QP/KvLhpx7GKofufLJh8MtiD0eipkeaTWjF8RVALmcvRvnq1XOEC+Lz8UsNRgMz9k8XkCQQDhhLkahL52i8WoPfDysFOgUqfmPdppkEYVOhIQXBUE0NZB9foWaYZWxcXUc1kZvi5nFXOD0juowJJUEpy5OghdAkEAvtwMqF7M7VfWMsAQj2Vhz8ssXUdRA0/q3MQMfJiDiJIsdkvnM2BEIy0BnXGIDt+izb11FncFGzCCdMceWXwtBwJAOIGN89QQ+RkahIZIqjZ+LayoPyt+X3bz6HutbQX1ikhddxeP+y+jpnhVkl74k1ewvsmEMSJrKmReBczIEi01TQJAGLjWJuUItGGhTDeWrYxbTBgsKfT36G7spCX83BLBTupoOfaA/yWkDc5hnCw9jHepVe8JgJxwG+J/s3KrWrn79wJAfCrm0mc26QWg/ih5HPOE03eNCa35AElisJzX4WdHT1tPrdLVlUXnt6svjtxUA7zbA6a4y4o34dO/MNdBdSqmmg==");
+	
+	var  cndecryptData = encrypt.decryptLong2(encryptData);
+	console.log(cndecryptData);
+
+</script>
+</body>
+</html>
