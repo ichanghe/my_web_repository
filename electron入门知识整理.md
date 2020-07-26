@@ -1,6 +1,6 @@
 # electron入门知识整理
 
-## 1、electron介绍 
+## 1、electron介绍
 
 - Electron的原理：Electron 通将 Chromium 和 Node.js 合并到同一个运行时环境中，并将其打包为 Mac，Windows 和 Linux 系统下的应用；
 - Chromium是一个谷歌开源浏览器，可以调用所有前端相关的API，且不需要考虑兼容性问题；
@@ -39,7 +39,7 @@
 
 ## 6、BrowserWindow
 
-```
+```javascript
 
 new BrowserWindow({
   width: 960,
@@ -63,7 +63,7 @@ let win = new BrowserWindow({..., frame:false})
 body{ -webkit-app-region: drag } --> 设置整个窗口为拖拽区
 - win.setMenu(null)：隐藏顶部菜单；
 - 最大化、最小化、隐藏、关闭窗口
-win.hide()：隐藏窗口； win.isVisible()：窗口是否可见； win.close()：	关闭窗口
+win.hide()：隐藏窗口； win.isVisible()：窗口是否可见； win.close()：关闭窗口
 win.maximize()：最大化窗口，如果窗口尚未显示，这也将会显示，但不会有焦点；
 win.unmaximize()：取消窗口最大化； win.isMaximized()：判断窗口是否最大化；
 win.minimize()：最小化窗口；
@@ -78,7 +78,7 @@ dialog模块：不仅可以弹出信息提示框，也可以实现本地文件�
 - 打开功能只是回调文件/目录的路径，并不能获取文件/目录的内容；
 - 操作文件/目录的功能，需要通过nodejs实现。
 
-```
+```javascript
 // 打开epc文件
 ipcMain.on("open-epc", (event) => {
   dialog
@@ -119,7 +119,7 @@ event.returnValue = 'sync reply' ---> 回复给渲染进程
 
 ## 10、数据持久化electron-store
 
-```
+```javascript
 const Store = require('electron-store');
 
 const myStore = new Store ({
@@ -141,7 +141,7 @@ console.log(myStore.get('unicorn'));
 
 ## 11、应用打包
 
-```
+```json
 
  "dist_win": "electron-builder --ia32 --win",
  "dist_mac": "electron-builder --mac",
