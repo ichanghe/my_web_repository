@@ -1,2 +1,2 @@
-#有问题请留言
-各位同学可以在issues中提问，无论是实际项目中遇到的问题，或者是技术问题都可以， 大家一起解决 :bug:
+
+[手写数组的方法：](https://github.com/ichanghe/my_web_repository/issues/10)
